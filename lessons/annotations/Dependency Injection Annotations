@@ -1,0 +1,17 @@
+@Autowired
+Automatically injects required dependencies into a class. Eliminates the need for manual object creation.
+example:@Autowired
+        private UserService userService;
+
+@Qualifier
+Specifies which bean to inject when multiple beans of the same type exist.
+example:@Autowired
+        @Qualifier("emailService")
+        private NotificationService service;
+
+@Primary
+Marks a bean as the default choice among multiple candidates. Used when no @Qualifier is explicitly specified.
+example:@Primary
+        @Component
+        public class SmsService implements NotificationService {
+        }

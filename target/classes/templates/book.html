@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Book</title>
+</head>
+<body>
+
+<a th:href="@{'/BookController/edit/' + ${book.id}}">Edit book</a>
+<h1>Opened Book</h1>
+
+<p><b>Author:</b> <span th:text="${book.author}"></span></p>
+<p><b>Title:</b> <span th:text="${book.title}"></span></p>
+
+<br>
+
+<p><b>Content:</b></p>
+
+<div style="border:1px solid black; padding:10px; width:1000px; word-wrap: break-word;">
+    <p th:text="${book.content}"></p>
+</div>
+
+<br>
+
+<a th:href="@{/BookController/ListOfBooks}">Back</a>
+
+</body>
+</html>

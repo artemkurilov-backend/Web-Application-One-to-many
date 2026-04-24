@@ -1,0 +1,12 @@
+Spring annotations = application logic
+Swagger annotations = documentation only
+
+Data Validation -
+                @NotBlank
+                @Min
+                @Valid
+Swagger Documentation -
+                      @Tag
+                      @Schema
+                      @Operation
+                      summary - This is a parameter inside @Operation.
