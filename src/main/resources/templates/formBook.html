@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form page</title>
+</head>
+<body>
+
+<h1>Form page</h1>
+
+<form th:action="@{/BookController/formAddBook/new}" method="post">
+
+    Author:
+    <input type="text" name="author">
+    <br><br>
+
+    Title:
+    <input type="text" name="title">
+    <br><br>
+
+    Quantity
+    <input type="text" name="quantity">
+    <br><br>
+
+    Content:
+    <textarea name="content" rows="10" cols="50"
+              th:text="${book.content}"></textarea>
+    <br><br>
+
+
+    <button type="submit">Submit</button>
+
+</form>
+
+
+</body>
+</html>

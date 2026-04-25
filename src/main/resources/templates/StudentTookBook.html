@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>The list of books he took</title>
+</head>
+<body>
+<a th:href="@{/StudentController/ListOfStudents}">Back</a>
+<h1>The list of books he took</h1>
+<br><br>
+
+<table border="1">
+  <tr>
+    <th>Book Id</th>
+    <th>Book Author</th>
+    <th>Book Title</th>
+    <th>Date</th>
+    <th>Action</th>
+  </tr>
+
+  <tr th:each="borrow : ${borrows}">
+    <td th:text="${borrow.book.id}"></td>
+    <td th:text="${borrow.book.author}"></td>
+    <td th:text="${borrow.book.title}"></td>
+    <td th:text="${borrow.borrowDate}"></td>
+    <td>
+      <a th:href="@{'/borrow/return/' + ${borrow.id}}">
+        Give back
+      </a>
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>
