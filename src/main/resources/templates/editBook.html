@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Book</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/favicon-180.png">
+
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/icons/favicon-512.png">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <span class="navbar-brand">Edit Book</span>
+    </div>
+</nav>
+
+<div class="container mt-5 col-md-6">
+
+    <div class="card shadow p-4">
+
+        <h3 class="mb-4 text-center">Edit Book</h3>
+
+        <form th:action="@{'/BookController/edit/' + ${book.id}}" method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Author</label>
+                <input type="text" name="author"
+                       class="form-control"
+                       th:value="${book.author}">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Title</label>
+                <input type="text" name="title"
+                       class="form-control"
+                       th:value="${book.title}">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Quantity</label>
+                <input type="text" name="quantity"
+                       class="form-control"
+                       th:value="${book.quantity}">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Content</label>
+                <textarea name="content"
+                          class="form-control"
+                          rows="5"
+                          th:text="${book.content}"></textarea>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-success w-100">
+                    Save
+                </button>
+
+                <a th:href="@{/BookController/ListOfBooks}"
+                   class="btn btn-secondary w-100">
+                    Back
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
