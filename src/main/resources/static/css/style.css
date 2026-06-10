@@ -1,0 +1,132 @@
+body {
+    background: linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b,
+            #334155
+    );
+    min-height: 100vh;
+    color: white;
+}
+
+.navbar {
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.3) !important;
+}
+
+.custom-backdrop {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.35);
+    z-index: 1040;
+
+    opacity: 0;
+    animation: fadeIn 0.25s forwards;
+}
+
+.custom-backdrop.show {
+    opacity: 1;
+}
+
+.custom-modal {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1050;
+}
+
+.custom-modal-content {
+    width: 420px;
+    border-radius: 14px;
+    overflow: hidden;
+
+    transform: scale(0.7);
+    opacity: 0;
+
+    animation: modalOpen 0.25s forwards;
+}
+
+.custom-modal.hide-animation .custom-modal-content {
+    animation: modalClose 0.25s forwards;
+}
+
+@keyframes modalOpen {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes modalClose {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.table-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.table-custom {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(255,255,255,0.04);
+}
+
+.table-custom thead th {
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.table-custom tbody tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);
+}
+
+.table-custom tbody tr:nth-child(odd) {
+    background: rgba(255,255,255,0.02);
+}
+
+.table-custom tbody tr:hover {
+    background: rgba(255,255,255,0.10);
+}
+
+.table-custom td {
+    color: white;
+    vertical-align: middle;
+}
+
+.table-custom tbody tr:last-child td {
+    border-bottom: none;
+}
